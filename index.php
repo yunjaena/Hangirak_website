@@ -13,16 +13,25 @@
     height: 200px;
     background: #aaa;
   }
+  #bannerimg{
+  background-image: url("img/picnic.jpg");
+  background-size: cover;
+  color: white;
+  }
+  .bg-orange{
+    background-color: #ffb900;
+
+  }
   </style>
 </head>
 <body>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>한기대 학생들을 위한 맞춤형 도시락 배달 서비스</h1>
-  <p>Resize this responsive page to see the effect!</p>
+<div class="jumbotron text-center" style="margin-bottom:0" id="bannerimg">
+  <h1>한기락</h1>
+  <p>한기대 학생들을 위한 맞춤형 도시락 배달 서비스</p>
 </div>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-orange navbar-dark">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
