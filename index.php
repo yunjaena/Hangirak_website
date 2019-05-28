@@ -22,6 +22,15 @@
     background-color: #ffb900;
 
   }
+  .modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
   </style>
 </head>
 <body>
@@ -49,6 +58,53 @@
       </li>
     </ul>
   </div>
+  <!--로그인-->
+  <button type="button" class="btn btn-default btn-lg" id="myBtn">로그인</button>
+  <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="padding:35px 50px;">
+            <h4><span class="glyphicon glyphicon-lock"></span> 로그인</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          </div>
+          <div class="modal-body" style="padding:40px 50px;">
+            <form role="form">
+              <div class="form-group">
+                <label for="usrname"><span class="glyphicon glyphicon-user"></span> 사용자</label>
+                <input type="text" class="form-control" id="usrname" placeholder="아이디를 입력해주세요">
+              </div>
+              <div class="form-group">
+                <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>비밀번호</label>
+                <input type="text" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요">
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="" checked>아이디 기억 </label>
+              </div>
+                <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> 로그인</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+            <p >회원이 아니신가요?<a href="#">회원가입</a></p>
+            <p>비밀번호를<a href="#">잃어버리셨나요?</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function(){
+    $("#myBtn").click(function(){
+      $("#myModal").modal();
+    });
+  });
+  </script>
+<!--로그인 끝-->
 </nav>
 
 <div class="container" style="margin-top:30px">
