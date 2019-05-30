@@ -73,7 +73,7 @@ button:hover {
 </style>
 <body>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="./SignUpSave.php" method ="post" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
@@ -83,7 +83,7 @@ button:hover {
     <input type="text" placeholder="Enter Id" name="id" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
@@ -104,7 +104,7 @@ button:hover {
     <input type="text" placeholder="Enter address" name="address" required>
 
     <label for="tel_num"><b>Phone Number</b></label>
-    <input type="text" placeholder="Enter Phone number" name="tel_num" required>
+    <input type="text" placeholder="Enter Phone number" name="tel" required>
 
     <label for="age"><b>Age</b></label>
     <input type="password" placeholder="Enter Age" name="age" required>

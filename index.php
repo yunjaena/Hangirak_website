@@ -1,6 +1,10 @@
+<?php
+include "./common/session.php";
+ ?>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
+
   <title>한기락-한기대생을 위한 도시락</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,6 +35,34 @@
   .modal-footer {
     background-color: #f9f9f9;
   }
+  .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
   </style>
 </head>
 <body>
@@ -59,6 +91,8 @@
     </ul>
   </div>
   <!--로그인-->
+  <?php if(!isset($_SESSION['id'])){
+    ?>
   <button type="button" class="btn btn-default btn-lg" id="myBtn">로그인</button>
   <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog ">
@@ -88,7 +122,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-            <p >회원이 아니신가요?<a href="#">회원가입</a></p>
+            <p >회원이 아니신가요?<a href="./Sign_Up.php">회원가입</a></p>
             <p>비밀번호를<a href="#">잃어버리셨나요?</a></p>
           </div>
         </div>
@@ -105,47 +139,53 @@
   });
   </script>
 <!--로그인 끝-->
+<?php
+}else{?>
+<!-- 작성-->
+<button type="button" class="btn btn-default btn-lg" id="myBtn">회원정보 수정</button>
+<?php
+}
+  ?>
 </nav>
 
 <div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>About Me</h2>
-      <h5>Photo of me:</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      <h3>Some Links</h3>
-      <p>Lorem ipsum dolor sit ame.</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
+
+
+
+      <div class="card">
+        <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+        <h1>Tailored Jeans</h1>
+        <p class="price">$19.99</p>
+        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+        <p><button>Add to Cart</button></p>
+      </div>
+
+        <br>
+      <div class="card">
+        <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+        <h1>Tailored Jeans</h1>
+        <p class="price">$19.99</p>
+        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+        <p><button>Add to Cart</button></p>
+      </div>
+
+
+    <div class="card">
+      <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+      <h1>Tailored Jeans</h1>
+      <p class="price">$19.99</p>
+      <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+      <p><button>Add to Cart</button></p>
     </div>
-    <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      <br>
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+    <div class="card">
+      <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+      <h1>Tailored Jeans</h1>
+      <p class="price">$19.99</p>
+      <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+      <p><button>Add to Cart</button></p>
     </div>
-  </div>
+
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
