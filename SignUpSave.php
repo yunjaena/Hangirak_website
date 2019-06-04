@@ -13,7 +13,7 @@ $age = $_POST['age'];
 
 function goSignUpPage($alert){
 echo $alert.'<br>';
-echo "<a href='./Sign_In.php'>회원가입폼으로 이동</a>";
+echo "<a href='./Sign_Up.php'>회원가입폼으로 이동</a>";
 return;
 }
 //유효성 검사
@@ -44,10 +44,9 @@ exit;
 }
 //닉네임 중복 검사
 if ($isIdCheck == true ) {
-$regTime = time();
 $sql = "INSERT INTO membership(id,password, sex, allergy, name, post_num,address,tel,age)";
 $sql .= "VALUES('{$id}','{$pw}','{$sex}','{$allergy}','{$name}','{$post_num}','{$address}',";
-$sql .= "'{$tel}','{$age}');";
+$sql .= "'{$tel}','{$age}')";
 echo $sql;
 $result = $mysqli->query($sql);
 if ($result) {

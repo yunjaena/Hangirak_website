@@ -72,7 +72,7 @@ include "./common/session.php";
   <p>한기대 학생들을 위한 맞춤형 도시락 배달 서비스</p>
 </div>
 
-<nav class="navbar navbar-expand-sm bg-orange navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -105,14 +105,14 @@ include "./common/session.php";
 
           </div>
           <div class="modal-body" style="padding:40px 50px;">
-            <form role="form">
+            <form method ="post" action= "./signInProcessing.php">
               <div class="form-group">
                 <label for="usrname"><span class="glyphicon glyphicon-user"></span> 사용자</label>
-                <input type="text" class="form-control" id="usrname" placeholder="아이디를 입력해주세요">
+                <input type="text" class="form-control" name="userId" placeholder="아이디를 입력해주세요" required>
               </div>
               <div class="form-group">
                 <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>비밀번호</label>
-                <input type="text" class="form-control" id="psw" placeholder="비밀번호를 입력해주세요">
+                <input type="password" class="form-control" name="userPw" placeholder="비밀번호를 입력해주세요" required>
               </div>
               <div class="checkbox">
                 <label><input type="checkbox" value="" checked>아이디 기억 </label>
@@ -143,6 +143,11 @@ include "./common/session.php";
 }else{?>
 <!-- 작성-->
 <button type="button" class="btn btn-default btn-lg" id="myBtn">회원정보 수정</button>
+<div>
+<button type="button" class="btn btn-default btn-lg" id="logoutBtn" onclick="location.reload()">로그아웃</button>
+  <?php unset($_SESSION['id']);
+     ?>
+</div>
 <?php
 }
   ?>
@@ -151,41 +156,100 @@ include "./common/session.php";
 <div class="container" style="margin-top:30px">
 
 
-
-      <div class="card">
-        <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-        <h1>Tailored Jeans</h1>
-        <p class="price">$19.99</p>
-        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-        <p><button>Add to Cart</button></p>
+  <div class="row">
+      <div class="col-sm">
+        <div class="card">
+          <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+          <h1>Tailored Jeans</h1>
+          <p class="price">$19.99</p>
+          <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+          <p><button>Add to Cart</button></p>
+        </div>
       </div>
-
-        <br>
-      <div class="card">
-        <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-        <h1>Tailored Jeans</h1>
-        <p class="price">$19.99</p>
-        <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-        <p><button>Add to Cart</button></p>
+      <div class = "col-sm">
+        <div class="card">
+          <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+          <h1>Tailored Jeans</h1>
+          <p class="price">$19.99</p>
+          <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+          <p><button>Add to Cart</button></p>
+        </div>
       </div>
-
-
-    <div class="card">
-      <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-      <h1>Tailored Jeans</h1>
-      <p class="price">$19.99</p>
-      <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-      <p><button>Add to Cart</button></p>
+      <div class = "col-sm">
+        <div class="card">
+          <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+          <h1>Tailored Jeans</h1>
+          <p class="price">$19.99</p>
+          <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+          <p><button>Add to Cart</button></p>
+        </div>
+      </div>
     </div>
 
-    <div class="card">
-      <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-      <h1>Tailored Jeans</h1>
-      <p class="price">$19.99</p>
-      <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-      <p><button>Add to Cart</button></p>
-    </div>
 
+    <div class="row">
+        <div class="col-sm">
+          <div class="card">
+            <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+        <div class = "col-sm">
+          <div class="card">
+            <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+        <div class = "col-sm">
+          <div class="card">
+            <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>Add to Cart</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm">
+            <div class="card">
+              <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+              <h1>Tailored Jeans</h1>
+              <p class="price">$19.99</p>
+              <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+              <p><button>Add to Cart</button></p>
+            </div>
+          </div>
+          <div class = "col-sm">
+            <div class="card">
+              <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+              <h1>Tailored Jeans</h1>
+              <p class="price">$19.99</p>
+              <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+              <p><button>Add to Cart</button></p>
+            </div>
+          </div>
+          <div class = "col-sm">
+            <div class="card">
+              <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+              <h1>Tailored Jeans</h1>
+              <p class="price">$19.99</p>
+              <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+              <p><button>Add to Cart</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+      <br>
+    </div>
+        </div>
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
