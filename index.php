@@ -70,6 +70,7 @@ include "./common/session.php";
 <div class="jumbotron text-center" style="margin-bottom:0" id="bannerimg">
   <h1>한기락</h1>
   <p>한기대 학생들을 위한 맞춤형 도시락 배달 서비스</p>
+
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -80,7 +81,7 @@ include "./common/session.php";
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#"></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -142,11 +143,13 @@ include "./common/session.php";
 <?php
 }else{?>
 <!-- 작성-->
-<button type="button" class="btn btn-default btn-lg" id="myBtn">회원정보 수정</button>
+<button type="button" class="btn btn-default btn-lg" id="myBtn" onclick="location.href='./shopping_cart.php'" >장바구니</button>
 <div>
-<button type="button" class="btn btn-default btn-lg" id="logoutBtn" onclick="location.reload()">로그아웃</button>
-  <?php unset($_SESSION['id']);
-     ?>
+<button type="button" class="btn btn-default btn-lg" id="logoutBtn" onclick="location.href='LogOut.php'">로그아웃</button>
+<script laguage = "javascript">
+
+</script>
+
 </div>
 <?php
 }

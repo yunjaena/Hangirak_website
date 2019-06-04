@@ -30,7 +30,7 @@ exit;
 } else {
 $memberInfo = $result->fetch_array(MYSQLI_ASSOC);
 
-$_SESSION['id'] = $memberInfo['id'];
+$_SESSION['id'] = $id;
 Header("Location:../index.php");
 }
 }
