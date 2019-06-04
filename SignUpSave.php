@@ -44,8 +44,8 @@ exit;
 }
 //닉네임 중복 검사
 if ($isIdCheck == true ) {
-$sql = "INSERT INTO membership(id,password, sex, allergy, name, post_num,address,tel,age)";
-$sql .= "VALUES('{$id}','{$pw}','{$sex}','{$allergy}','{$name}','{$post_num}','{$address}',";
+$sql = "INSERT INTO membership(member_num,id,password, sex, allergy, name, post_num,address,tel,age)";
+$sql .= "VALUES(NULL,'{$id}','{$pw}','{$sex}','{$allergy}','{$name}','{$post_num}','{$address}',";
 $sql .= "'{$tel}','{$age}')";
 echo $sql;
 $result = $mysqli->query($sql);

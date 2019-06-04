@@ -1,5 +1,6 @@
 <?php
 include "./common/session.php";
+
  ?>
 <!DOCTYPE html>
 <html lang="kr">
@@ -39,6 +40,7 @@ include "./common/session.php";
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
+  margin-bottom: 15px;
   text-align: center;
   font-family: arial;
 }
@@ -63,6 +65,11 @@ include "./common/session.php";
 .card button:hover {
   opacity: 0.7;
 }
+
+.thumb { display: block; overflow: hidden; height: 300px; width: 300px; }
+.thumb img { display: block; /* Otherwise it keeps some space around baseline */ min-width: 100%; /* Scale up to fill container width */ min-height: 100%; /* Scale up to fill container height */ -ms-interpolation-mode: bicubic; /* Scaled images look a bit better in IE now */ }
+
+
   </style>
 </head>
 <body>
@@ -144,64 +151,87 @@ include "./common/session.php";
 }else{?>
 <!-- 작성-->
 <button type="button" class="btn btn-default btn-lg" id="myBtn" onclick="location.href='./shopping_cart.php'" >장바구니</button>
-<div>
+
 <button type="button" class="btn btn-default btn-lg" id="logoutBtn" onclick="location.href='LogOut.php'">로그아웃</button>
 <script laguage = "javascript">
 
 </script>
 
-</div>
+
 <?php
 }
   ?>
 </nav>
 
 <div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>오늘 추천 메뉴</h2>
-      <h5>메뉴이름</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      <h3>Some Links</h3>
-      <p>Lorem ipsum dolor sit ame.</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">도시락</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
-    </div>
-    <div class="col-sm-8">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Dec 7, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      <br>
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fakeimg">Fake Image</div>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
+
+  <!-- <div class="toast" data-autohide="false">
+<div class="toast-header">
+<div class="row  col-sm-12">
+<div class="col-sm-8"><strong class="mr-auto text-primary ">Toast Header</strong></div>
+<div class="col-sm-4">  <button type="button" class="close" data-dismiss="toast" id="toast">&times;</button></div>
 </div>
 
+</div>
+<div class="row">
+<div class="toast-body col-sm col-sm-12">
+Some text inside the toast body
+</div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+$("#toast").click(function(){
+$('.toast').toast('show');
+});
+});
+</script> -->
+<?php
+$connect = mysqli_connect("localhost","root","123456");
+$db_con = mysqli_select_db($connect,"hangirak_db");
+$sql = "select * from menu";
+$result = mysqli_query($connect,$sql);
+$number = 0;
+
+while($row = mysqli_fetch_array($result)){
+  if($number%3 ==0){
+echo '<div class="row">';
+}
+      echo '<div class="col-sm">';
+        echo '<div class="card">';
+        printf('<img class = "thumb" src="%s" alt="%s" />',$row['img'],$row['img'],$row['menu_name']);
+        // echo '<img src="';
+        //  echo '$row['img']"';
+        //  echo ' alt="Denim Jeans" style="width:100%">';
+          echo '<h1>';
+          echo $row['menu_name'];
+        echo '</h1>';
+            echo '<p class="price">';
+            echo $row['price'];
+            echo '</p>';
+            echo '<p>';
+            echo $row['simple_explain'];
+            echo '</p>';
+          echo '<p><button>Add to Cart</button></p>';?>
+
+          <?php
+
+      echo '  </div>';
+      echo '</div>';
+      echo "<br><br>";
+        $number++;
+        if($number%3 ==0){
+    echo '</div>';
+  }
+
+  }
+ ?>
+        </div>
+</div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p>COPYRIGHT ⓒ 2019 BY Adventure ALL RIGHTS RESERVED.  </p>
+  <p>Footer</p>
 </div>
-
 
 </body>
 </html>

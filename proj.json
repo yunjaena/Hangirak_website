@@ -1,7 +1,0 @@
-{ 
-	"localhost":
-	{
-		"url":"http://localhost:8000",
-		"folder":"C:\Bitnami\wampstack-7.1.29-0\apache2\htdocs"
-	}
-}
